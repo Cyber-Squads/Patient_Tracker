@@ -1,0 +1,76 @@
+﻿@model IEnumerable<PatientTracker.Models.PatientDL>
+
+@{
+    ViewBag.Title = "AdminPatientHome";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+
+    #xyz {
+        float: right;
+    }
+</style>
+<h2>Admin Patient Home</h2>
+<div id="xyz">
+    <b>Welcome @ViewBag.Welcome</b>
+    <b>@Html.ActionLink("Logout", "AdminPatientHomeLogout", "Admin")</b>
+</div>
+<p>
+    @Html.ActionLink("Create New", "PatientRegister","Patient")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactNumber)
+    </td>
+    
+    <td>
+        @Html.ActionLink("Edit", "EditPatient", new { id = item.PatientId }) |
+        @Html.ActionLink("Details", "PatientDetails", new { id = item.PatientId }) |
+        @Html.ActionLink("Delete", "DeletePatient", new { id = item.PatientId })
+    </td>
+</tr>
+}
+
+</table>

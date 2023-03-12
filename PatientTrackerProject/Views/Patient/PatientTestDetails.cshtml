@@ -1,0 +1,117 @@
+﻿@model IEnumerable<PatientTracker.Models.MedicalTestDL>
+
+@{
+    ViewBag.Title = "PatientTestDetails";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Patient Test Details</h2>
+
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfTestAppointment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestRequest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestCompletedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Treatment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DoctorId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.doctors.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.patients.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DoctorType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfTestAppointment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestRequest)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestCompletedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestResult)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Treatment)
+    </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id = item.TestId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TestId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TestId })*@
+    </td>
+</tr>
+}
+
+</table>
+
+<div>
+    <b>@Html.ActionLink("Go Back", "PatientHome")</b>
+</div>

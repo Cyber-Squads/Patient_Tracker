@@ -1,0 +1,162 @@
+﻿@model PatientTracker.Models.MedicalTestDL
+
+@{
+    ViewBag.Title = "EditPatientTest";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Edit Patient Test</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>MedicalTestDL</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.TestId)
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.TestId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.TestType, new List<SelectListItem> {
+          new SelectListItem{Text="Blood Test",Value="Blood Test"},
+          new SelectListItem{Text="Urine Test",Value="Urine Test"},
+          new SelectListItem{Text="Covid Test",Value="Covid Test"},
+          new SelectListItem{Text="ENT Test",Value="ENT Test"},
+          new SelectListItem{Text="MRI SCAN",Value="MRI SCAN"},
+          new SelectListItem{Text="HIV Test",Value="HIV Test"},
+          new SelectListItem{Text="CT SCAN",Value="CT SCAN"},
+          new SelectListItem{Text="X-RAY",Value="X-RAY"},
+          new SelectListItem{Text="Other",Value="Other"},
+
+
+          }, "select"
+
+
+              , new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DoctorType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.DoctorType, new List<SelectListItem> {
+       new SelectListItem{Text="ENT specialist",Value="ENT specialist"},
+       new SelectListItem{Text="Gynaecologist",Value="Gynaecologist"},
+       new SelectListItem{Text="Dentist",Value="Dentist"},
+       new SelectListItem{Text="Psychiatrists",Value="Psychiatrists"},
+       new SelectListItem{Text="Orthopaedic surgeon",Value="Orthopaedic surgeon"},
+       new SelectListItem{Text="Cardiothoracic surgeon",Value="Cardiothoracic surgeon"},
+       new SelectListItem{Text="Neurologist",Value="Neurologist"},
+       new SelectListItem{Text="Paediatrician",Value="Paediatrician"},
+       new SelectListItem {Text="Primary Care Physician",Value="Primary Care Physician"},
+       new SelectListItem{Text="Other",Value="Other"},
+
+
+       }, "select"
+
+
+           , new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DoctorType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateOfTestAppointment, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DateOfTestAppointment, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateOfTestAppointment, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestRequest, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.TestRequest, new List<SelectListItem> {
+            new SelectListItem{Text="Yes",Value="Yes"},
+             new SelectListItem{Text="No",Value="No"},
+
+            }, "Select"
+
+                , new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestRequest, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestCompletedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TestCompletedDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestCompletedDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestResult, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TestResult, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestResult, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TestStatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TestDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TestDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TestDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Treatment, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Treatment, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Treatment, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PatientId, "PatientId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PatientId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PatientId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DoctorId, "DoctorId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DoctorId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DoctorId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "AdminPatientTestInfo")
+</div>

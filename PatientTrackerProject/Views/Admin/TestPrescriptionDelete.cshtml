@@ -1,0 +1,106 @@
+﻿@model PatientTracker.Models.PatientBillingDL
+
+@{
+    ViewBag.Title = "TestPrescriptionDelete";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Test Prescription Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescriptionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescriptionID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doctors.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalTest.TestType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalTest.TestType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patients.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherBillingsDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherBillingsDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "AdminPatientTestInfo")
+        </div>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AdminUserInfo";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+    #xyz{
+        float:right;
+    }
+</style>
+<h2>Admin User Info</h2>
+<div id="xyz">
+    <b>Welcome @ViewBag.Welcome</b>
+    <b>@Html.ActionLink("Logout", "AdminUserInfoLogout", "Admin")</b>
+</div>
+<div>
+    <table class="table table-striped" >
+        <tr>
+            <td><b>@Html.ActionLink("Patient Details", "AdminPatientInfo")</b></td>
+            <td><b>@Html.ActionLink("Doctor Details", "AdminDoctorInfo")</b></td>
+            <td><b>@Html.ActionLink("Clerk Details", "AdminClerkInfo")</b></td>
+            <td><b>@Html.ActionLink("Update Test Details", "AdminPatientTestInfo")</b></td>
+        </tr>
+    </table>
+</div>

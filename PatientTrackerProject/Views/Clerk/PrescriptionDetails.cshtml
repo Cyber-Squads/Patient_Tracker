@@ -1,0 +1,111 @@
+﻿@model PatientTracker.Models.PatientBillingDL
+
+@{
+    ViewBag.Title = "PrescriptionDetails";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Prescription Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescriptionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescriptionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doctors.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalTest.TestType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalTest.TestType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patients.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherBillingsDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherBillingsDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTestPrescription", new { id = Model.PrescriptionID }) |
+    @Html.ActionLink("Back to List", "ClerkPatientTestDetails")
+</p>

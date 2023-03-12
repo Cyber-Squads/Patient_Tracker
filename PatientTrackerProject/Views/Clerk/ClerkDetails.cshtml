@@ -1,0 +1,126 @@
+﻿@model PatientTracker.Models.ClerkDL
+
+@{
+    ViewBag.Title = "ClerkDetails";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Clerk Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecuirtyQuestion1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecuirtyQuestion1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecurityAnswer1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecurityAnswer1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecuirtyQuestion2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecuirtyQuestion2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecurityAnswer2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecurityAnswer2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecuirtyQuestion3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecuirtyQuestion3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClerkSecurityAnswer3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClerkSecurityAnswer3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditClerk", new { id = Model.ClerkId }) |
+    @Html.ActionLink("Back to List", "ClerkHome")
+</p>

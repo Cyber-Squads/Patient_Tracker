@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ClerkHome";
+}
+
+<h2>Clerk Home</h2>
+
+<style>
+    #xyz{
+        float:right;
+    }
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<div id="xyz">
+    <b>Welcome @ViewBag.Welcome</b> |
+    <b>@Html.ActionLink("account","ClerkDetails")</b> |
+    <b>@Html.ActionLink("Logout", "ClerkLogout", "Clerk")</b>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td><b>@Html.ActionLink("Available Patients", "ClerkPatientHome")</b></td>
+            <td><b>@Html.ActionLink("Patient Test Details", "ClerkPatientTestDetails")</b></td>
+            @*<td><b>@Html.ActionLink("Patient Billing Details", "ClerkPatientBillingDetails")</b></td>*@
+        </tr>
+    </table>
+</div>

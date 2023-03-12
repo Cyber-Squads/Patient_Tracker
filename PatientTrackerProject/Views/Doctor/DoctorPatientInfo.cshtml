@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PatientTracker.Models.MedicalTestDL>
+
+@{
+    ViewBag.Title = "DoctorPatientInfo";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Doctor Patient Info</h2>
+<b>@ViewBag.Message</b>
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfTestAppointment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestRequest)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        
+        @Html.DisplayFor(modelItem => item.DoctorId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.doctors.FirstName)
+    </td>
+    <td>
+        @Html.ActionLink(item.PatientId, "DoctorPatientPersonalInfo", new { id = item.PatientId })
+        
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.patients.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfTestAppointment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestRequest)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "EditDoctorPatientInfo", new { id = item.TestId }) |
+        @Html.ActionLink("Details", "DoctorPatientDetails", new { id = item.TestId }) |
+        @Html.ActionLink("Delete", "DeleteDoctorPatient", new { id = item.TestId }) |
+        @Html.ActionLink("Add Prescription", "PatientPrecription", new { id = item.TestId, pi=item.PatientId})
+    </td>
+</tr>
+}
+
+</table>
+<div>
+    <b>@Html.ActionLink("Back to List", "DoctorHome")</b>
+    
+</div>

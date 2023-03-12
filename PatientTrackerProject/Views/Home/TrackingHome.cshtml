@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "TrackingHome";
+}
+
+
+
+
+<style>
+    #textColor {
+        color: red;
+    }
+
+
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Patient Tracker</h2>
+<center>
+    <div id="textColor">
+        <b>@ViewBag.Message</b>
+    </div>
+</center>
+<center>
+    <div>
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <table class="table table-striped">
+                <tr>
+                    <td><b>@Html.Label("Choose your Role")</b></td>
+                    <td>
+                        @Html.DropDownList("Role", new List<SelectListItem>
+               {
+                   new SelectListItem{Text="Admin",Value="Admin"},
+                   new SelectListItem{Text="Doctor",Value="Doctor"},
+                   new SelectListItem{Text="Patient",Value="Patient"},
+                   new SelectListItem{Text="Clerk",Value="Clerk"}
+               }, "Select Your Role "
+
+
+                )
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" name="submitBtn">Submit</button></td>
+                </tr>
+            </table>
+        }
+    </div>
+</center>
+
+

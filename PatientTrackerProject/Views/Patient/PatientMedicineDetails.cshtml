@@ -1,0 +1,105 @@
+﻿@model IEnumerable<PatientTracker.Models.PatientBillingDL>
+
+@{
+    ViewBag.Title = "PatientMedicineDetails";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Patient Medicine Details</h2>
+
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrescriptionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicalTest.TestType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicineDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicineQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherBillingsDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillingAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PrescriptionID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DoctorId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.doctors.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MedicalTest.TestType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.patients.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MedicineDetails)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MedicineQuantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OtherBillingsDetails)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BillingAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BillingDate)
+    </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id = item.PrescriptionID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PrescriptionID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PrescriptionID })*@
+    </td>
+</tr>
+}
+
+</table>
+
+<div>
+    <b>@Html.ActionLink("Go Back","PatientHome")</b>
+</div>

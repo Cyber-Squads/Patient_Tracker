@@ -1,0 +1,166 @@
+﻿@model PatientTracker.Models.ClerkDL
+
+@{
+    ViewBag.Title = "ClerkRegister";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Clerk Register</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+   
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Gender, new List<SelectListItem>
+       {
+           new SelectListItem{Text="Male",Value="Male"},
+           new SelectListItem{Text="Female",Value="Female"},
+           new SelectListItem{Text="Not to Specify",Value="Not to Specify"}
+
+       }, "Select Gender"
+
+           , new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecuirtyQuestion1, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ClerkSecuirtyQuestion1, new List<SelectListItem>
+       {
+     new SelectListItem{Text="Who was your Childhood Hero?",Value="Who Was Your Childhood Hero"},
+     new SelectListItem{Text="What is the name of your first pet?",Value="What is the name of your first pet?"},
+     new SelectListItem{Text="What is the name of the town where you were born?",Value="What is the name of the town where you were born?"},
+     new SelectListItem{Text="What elementary school did you attend?",Value="What elementary school did you attend?"},
+     new SelectListItem{Text="What Is your favorite book?",Value="What Is your favorite book?"}
+
+
+       }, "Please select question", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecuirtyQuestion1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecurityAnswer1, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ClerkSecurityAnswer1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecurityAnswer1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecuirtyQuestion2, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ClerkSecuirtyQuestion2, new List<SelectListItem>
+       {
+     new SelectListItem{Text="Who was your Childhood Hero?",Value="Who Was Your Childhood Hero"},
+     new SelectListItem{Text="What is the name of your first pet?",Value="What is the name of your first pet?"},
+     new SelectListItem{Text="What is the name of the town where you were born?",Value="What is the name of the town where you were born?"},
+     new SelectListItem{Text="What elementary school did you attend?",Value="What elementary school did you attend?"},
+     new SelectListItem{Text="What Is your favorite book?",Value="What Is your favorite book?"}
+
+
+       }, "Please select question", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecuirtyQuestion2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecurityAnswer2, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ClerkSecurityAnswer2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecurityAnswer2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecuirtyQuestion3, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ClerkSecuirtyQuestion3, new List<SelectListItem>
+       {
+     new SelectListItem{Text="Who was your Childhood Hero?",Value="Who Was Your Childhood Hero"},
+     new SelectListItem{Text="What is the name of your first pet?",Value="What is the name of your first pet?"},
+     new SelectListItem{Text="What is the name of the town where you were born?",Value="What is the name of the town where you were born?"},
+     new SelectListItem{Text="What elementary school did you attend?",Value="What elementary school did you attend?"},
+     new SelectListItem{Text="What Is your favorite book?",Value="What Is your favorite book?"}
+
+
+       }, "Please select question", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecuirtyQuestion3, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClerkSecurityAnswer3, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ClerkSecurityAnswer3, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClerkSecurityAnswer3, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="reset" value="Reset" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div class="text-danger">
+    <b>@ViewBag.MessageSucess</b>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "TrackingHome", "Home")
+</div>

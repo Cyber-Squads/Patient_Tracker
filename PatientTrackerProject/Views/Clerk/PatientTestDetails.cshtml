@@ -1,0 +1,131 @@
+﻿@model PatientTracker.Models.MedicalTestDL
+
+@{
+    ViewBag.Title = "PatientTestDetails";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+</style>
+<h2>Patient Test Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.doctors.DoctorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doctors.DoctorId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doctors.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doctors.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patients.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patients.PatientId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patients.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patients.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfTestAppointment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfTestAppointment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCompletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCompletedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Treatment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Treatment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditClerkPatientTest", new { id = Model.TestId }) |
+    @Html.ActionLink("Back to List", "ClerkPatientTestDetails")
+</p>

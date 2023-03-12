@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PatientTracker.Models.ClerkDL>
+
+@{
+    ViewBag.Title = "AdminClerkInfo";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+    #xyz{
+        float:right;
+    }
+    </style>
+<h2>Admin Clerk Info</h2>
+
+<b>
+    
+    @Html.ActionLink("Create New", "ClerkRegister", "Clerk")
+</b>
+<div id="xyz">
+    <b>Welcome @ViewBag.Welcome</b>
+</div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClerkId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClerkStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClerkId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClerkStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditClerk", new { id = item.ClerkId }) |
+        @Html.ActionLink("Details", "ClerkDetails", new { id = item.ClerkId }) |
+        @Html.ActionLink("Delete", "DeleteClerk", new { id = item.ClerkId })
+    </td>
+</tr>
+}
+
+</table>
+<div>
+    <b>@Html.ActionLink("Go Back","AdminUserInfo")</b>
+</div>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PatientTracker.Models.PatientDL>
+
+@{
+    ViewBag.Title = "AdminPatientInfo";
+}
+<style>
+    body {
+        background-color: lightskyblue;
+    }
+
+    #xyz {
+        float: right;
+    }
+    #d {
+        float: right;
+        margin-right: 100px;
+    }
+</style>
+<h2>Admin Patient Info</h2>
+
+<b>
+    
+    @Html.ActionLink("Create New", "PatientRegister","Patient")
+</b>
+<div id="xyz">
+    <b>Welcome @ViewBag.Welcome</b>
+</div><br/>
+      <div id="d">
+          @using (Html.BeginForm(FormMethod.Post))
+          {
+              <table>
+                  <tr>
+                      <td>@Html.Label("Search By Patient FirstName:")</td>
+                      <td>@Html.TextBox("Search")</td>
+                      <td></td>
+                      <td><button type="submit" name="Search" value="Search">Search</button></td>
+                  </tr>
+              </table>
+          }
+      </div>
+<br/>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientStatus)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditPatient", new { id = item.PatientId }) |
+        @Html.ActionLink("Details", "PatientDetails", new { id = item.PatientId }) |
+        @Html.ActionLink("Delete", "DeletePatient", new { id = item.PatientId })
+    </td>
+</tr>
+}
+
+</table>
+
+<div>
+    <b>@Html.ActionLink("Go Back", "AdminUserInfo")</b>
+</div>
